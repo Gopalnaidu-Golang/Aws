@@ -1,0 +1,77 @@
+
+EC2: capabilties are in AWS CONSOLE.
+  Renting virtual machine : start/stop/terminate.
+  Storage data on virtual drives EBS
+  Distributing load across machine ELB
+  Scaling the service using an auto scaling group ASG
+  
+  1.coose region on right side of console
+  2.Launch instance
+    1. choose an amazon machine image AMI
+    2. choose an instance type means size of instance
+    3.configure instance
+    4. add storage
+    5. add tags
+    6. configure security group
+    7. regview and launch->select existing key or create new key pair->Download key pair in form of xx.pem file
+    
+    How to stop instance: go to action option with right click then stop.
+    How to access instance using linux: using ssh : SSH runs on port 22 and controle a remote machine using command line
+      command1: ssh ec2-username@DNS_url. then will get permission denied then use xxx.pem file
+      command2: ssh -i ./xxx.pem ec2-username@DNS_url. then will get bad permission then give permission 
+      command3: chmod xxx.pem then run command2.
+      command4: whoami and ping google.com. then exit instance
+      vi ~/.ssh/config
+      content: 
+      Host my-first-machine
+           Hostname DNS_Url
+           User ec2-user
+           IdentityFile ~/ec2-masterclass/ec2-masterclass.pem
+           
+      How to access instance very fast: then setup ssh/config file like above
+      command: ssh my-first-machine then automaticlaly login instance
+      
+   How to access instance using windows:  download putty -> open putty 
+     use public DNS url or public Ip as hostname using username@Public IP
+     setup xxx.pem file from SSH option in putty but xx.pem file not acceptable so convert as xxx.ppk file using puttygen then load the ppk file
+     then check security group option in ec2 instance to have all permissions to access through windows.
+     then click on Open option in putty to connct instance then able to login successfully.
+   
+  SECURITY GROUP: inbound and out bound traffic
+  security group -> click myinstance -> create security grp/remove security grp -> EDIT inbound rule
+  if remv grp then when access instance using SSH will get timed out
+  
+  PRIVATE and PUBLIC IP: 
+  iPV4: [0-255][0-255][0-255][0-255]
+  IPV6 is newer and solves problems for internet of things IOT
+  private network IP are may be same but not public networks IP should Uniq.
+  Prive networks comminicate with public networks using internet gateway [proxy]
+  
+  PRIVATE IP: 
+  Machine can identiey only in private network
+  IP must be uniq across private Network
+  But 2 different private network IP can have the same IP's
+  only specified range of IP's are can be used as private network
+  
+  
+ when machine stop and start or restart instance then always change public IP address and if use privste IP it wont work.
+ Bootstrapping means launching commans when a machine starts using ec2 user data scripts.
+ while lauching instance -> configure instancs -> advanced option: better to create separate security group to connect machine .
+ Ex: install httpd:
+ #!bin/bash
+ yum update -y 
+ yum instsll -y httpd
+ service httpd start
+ chkconfig httpd on
+ 
+   EC2 PRICING:per second minimum of 60 seconds or per hour.
+   If stop the instance no cost chargable.
+      
+      
+      
+        
+      
+    
+    
+    
+  
