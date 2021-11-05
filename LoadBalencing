@@ -1,0 +1,26 @@
+Load balencer are servers that forward internet traffic to downstreams or instances.
+1.spread load across muliple downstream instances
+2.Expose a single point of access DNS to your app
+3. handles fails of downstream instances
+4. do reguler health checks
+5.provide ssl termination https for your web apps
+6.separate public and privte NW
+
+AWS has 3 types of load balences
+1.classic load balencer
+2.application load balencer[http/https]
+3.network load balencer[TCP]
+
+how to create Loadbalencer:
+1.From option create load balencer and add instances, then use public IP of load balncer to verify.
+2. Create security group to use load bslencer url as security to conncet the instances from external.
+3.Configure health check.
+
+How to create classic load balencer:
+
+How to create application load balencer:
+1.create target group
+2.set up or create ALB application load balencer
+3.look at how set up rules and load balencers
+
+
