@@ -1,10 +1,12 @@
 EC2 basics
 EC2 machine images
 choosing the right instance type
-Network nd secrity in instance
+Network and security in instance
 Elastic load balencing
 Auto scaling groups
-EBS elastic blosk storage
+EBS elastic block storage
 EC2 running modes
 
 Login instances using security group instead of IP addr.
+Elastic IP better to avoid it indicates poor architech.
+placement groups use is to create a cluster in a availibility zone max 7 instances in a single cluster using different harddware to reduce risk of failure of instaces in a zone.
