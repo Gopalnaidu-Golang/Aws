@@ -6,3 +6,5 @@ Elastic load balencing
 Auto scaling groups
 EBS elastic blosk storage
 EC2 running modes
+
+Login instances using security group instead of IP addr.
