@@ -5,22 +5,59 @@ Load balencer are servers that forward internet traffic to downstreams or instan
 4. do reguler health checks
 5.provide ssl termination https for your web apps
 6.separate public and privte NW
+7. high availabilty across zones.
 
 AWS has 3 types of load balences
 1.classic load balencer
 2.application load balencer[http/https]
 3.network load balencer[TCP]
 
+you can setup internal(private) LB and external(public) LB 
+Ex:Dnsname/details to chk details of LB
+
+
 how to create Loadbalencer:
 1.From option create load balencer and add instances, then use public IP of load balncer to verify.
-2. Create security group to use load bslencer url as security to conncet the instances from external.
+2.Create security group to use load bslencer url as security to conncet the instances from external.
 3.Configure health check.
 
 How to create classic load balencer:
+Define load balencer
+configure health check
+Add EC2 information
+VPC informations
+Security groups use create or existin.
+using DNS Name and port we can use LB.
 
-How to create application load balencer:
-1.create target group
+create Security groups or edit and add inbound and outbound rules here we need to add dnsname url, So that we can't allow to access instnce using http://IP/port.
+These are expencive and inefficient compared to Application LB.
+
+Health checks:
+Are crucial for load balencer
+they enable LB to froward traffic to instances to are avail to send request and response.
+Health check is done to a port and route(/health)
+If the response is not 200 OK, Then instance is un healthy.
+
+How to create application load balencer(Layer 7):
+Load balencing to multiple http applications across machines(target group)
+Load balencing to multiple http applications in the same machines(container)
+Load balencing based on route in URL.
+Load balencing based on hostname in URL.
+Basically they are awesome for microservices and containa based apps(ex: Docker)
+
+1.create target group. and configure heakth check then associate with LB.
+while create load balecer -> configure route option here u select target group.
+
 2.set up or create ALB application load balencer
 3.look at how set up rules and load balencers
+
+How to create Network load balencer(Layer 4):Mostly used for extream performance and shouldnot be the deafault load balencer to choose.
+support for static IP and Elastic IP
+Less latency ~100 ms.
+
+
+
+
+
 
 
