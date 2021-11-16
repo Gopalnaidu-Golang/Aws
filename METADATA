@@ -10,3 +10,12 @@ EC2 running modes
 Login instances using security group instead of IP addr.
 Elastic IP better to avoid it indicates poor architech.
 placement groups use is to create a cluster in a availibility zone max 7 instances in a single cluster using different harddware to reduce risk of failure of instaces in a zone.
+
+Cleaning up:
+EC2 Instances
+EBS Volumes
+Security Groups
+Elastic Load Balancers
+Auto Scaling Groups
+Custom AMIs
+EBS Snapshot
