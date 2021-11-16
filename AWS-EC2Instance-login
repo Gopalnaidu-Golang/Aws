@@ -67,9 +67,11 @@ EC2: capabilties are in AWS CONSOLE.
    EC2 PRICING:per second minimum of 60 seconds or per hour.
    If stop the instance no cost chargable.
       
-      
-      
-        
+   EC2 running modes:
+   1. Reserved instances
+   2.spot instances
+   3. Dedicated instances
+   
       
     
     
