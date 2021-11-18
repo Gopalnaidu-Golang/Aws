@@ -1,0 +1,18 @@
+PrivateIp and PublicIp
+PrivateIp:
+10.0.0.0/8. --> big NW
+172.16.0.0/12  --> Default AWS NW
+192.168.0.0/16  ---> Home NW
+
+Remaining all public NW
+Security group will work with private and public IP
+CICD has 2  components
+the base IP xx.xx.xx.xx.  tells contained IP range 
+subnet mask. /26   tells how many can change in the IP
+
+/32 no ip member can change
+/24 Last IP member canchange
+/16 Last IP 2 members can change
+/8. Last IP 3 members can change
+/0. All IP members can change
+
