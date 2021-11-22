@@ -19,3 +19,7 @@ subnet mask. /26   tells how many can change in the IP
 Creating rules for our security group
 Creating multiple Security group including dedicated SSH group
 Inbound rules and Outbound rules
+
+
+how to add or change security group for existing instance: right click on instancs -> name network setting -> change security group option.
+    
