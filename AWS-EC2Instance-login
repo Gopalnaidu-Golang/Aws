@@ -73,7 +73,7 @@ EC2: capabilties are in AWS CONSOLE.
    3. Dedicated instances
    
       
-    
+    how to add or change security group for existing instance: right click on instancs -> name network setting -> change security group option.
     
     
   
