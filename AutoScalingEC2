@@ -1,3 +1,4 @@
+https://wipro.udemy.com/course/aws-ec2-masterclass/learn/lecture/9223132#overview
 What's an Auto scaling group?
 in real life the load on your websites and application can change.
 in the cloud you can create and get rid of servers very quickly
@@ -22,7 +23,12 @@ network/subnet information
 Load balencer information
 Scaling polices.
 
-Create launch configuration the create ASG
+How to create auto scaling group:
+First Create launch configuration(new EC2 with security grp) then allows to create ASG.
+create asg:
+grp size, net work and advance datails having load balence, target grp,health check
+scaling policy,
+configure notifications,tags,review
 
 Auto scaling alarms:
 It is a possible to scale ASG based on cloud watch alarms
