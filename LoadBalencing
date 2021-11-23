@@ -22,12 +22,16 @@ how to create Loadbalencer:
 3.Configure health check.
 
 How to create classic load balencer:
-Define load balencer
+Define load balencer and create listener on port 80
+create security grp or use existing
+configure security settings
 configure health check
 Add EC2 information
 VPC informations
 Security groups use create or existin.
 using DNS Name and port we can use LB.
+then go security grp option and set the source as loadbalencer secrity grp so that app access only through LB, not from other security grp.
+no one direclty connect our ec2 instances.
 
 create Security groups or edit and add inbound and outbound rules here we need to add dnsname url, So that we can't allow to access instnce using http://IP/port.
 These are expencive and inefficient compared to Application LB.
