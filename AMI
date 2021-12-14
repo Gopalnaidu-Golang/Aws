@@ -1,0 +1,35 @@
+create EC2 instance
+update the machine:
+sudo yum update -y 
+sudo yum install -y java-1-8-
+set java jdk 8 as default
+sudo /usr/sbin/alternatives --config java
+sudo /usr/sbin/alternatives --config javac
+java -version
+download app
+cd /home/ec2-user
+wget https://github.com/xxx.jar --[pom.xml]
+test the app
+java -Xmx700m -jar xxx.jar
+
+here ec2sampleapp script from https://wipro.udemy.com/course/aws-ec2-masterclass/learn/lecture/9197218#overview
+permission to start the file
+sudo chmod +x /etc/init.d/ec2sampleapp
+
+apply across reboot:
+sudo chkconfig --add ec2sampleapp
+sudo chkconfig ec2sampleapp on
+sudo reboot then reconnect to ec2 instance to verify auto run of app.
+
+Crete AMI:
+go to launch instance the right click on instance Id -> select image -> create image from dropdown list.
+
+create instace using AMI:
+goto AMI -> right click on launch option folloe further as like other instances create.
+
+AWS marketplace will get public AMI while create instances.
+
+https://github.com/simplesteph
+https://github.com/simplesteph/ec2-masterclass-sampleapp/blob/master/src/main/java/com/github/simplesteph/udemy/EC2SampleApp.java
+
+ 
