@@ -1,0 +1,19 @@
+DataCenter -> zone AZ -> region ->cloud(connect)&Access
+Cloud computing
+Cloud Layers - PaaS,Saas,IaaS,BPaaS,DaaS
+Cloud deployment models
+Cloud solution Vendors
+VIrtualization: one comp hosting several Virtual Servers, automated provisioning, software installed automatically
+
+adv:
+Shared infra
+Dynamic provisioning
+Network acess
+Managed metering
+
+Infra Component hardware
+governance Component ,manage&control the resource allocaion
+workflow component
+self service component
+
+
