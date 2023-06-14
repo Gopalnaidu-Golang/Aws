@@ -1,3 +1,4 @@
+Day-1:  AWS freetier Account
 DataCenter -> zone AZ -> region ->cloud(connect)&Access
 Cloud computing
 Cloud Layers - PaaS,Saas,IaaS,BPaaS,DaaS
@@ -15,5 +16,127 @@ Infra Component hardware
 governance Component ,manage&control the resource allocaion
 workflow component
 self service component
+
+Cloud Models: private,public,hybrid&multi
+
+Bare Metel: Hardware
+Virtualization environment:
+server & Desktop Virtualization:
+Server:IBM mainframe,SUN,Linux
+Desktop:VMWare,Oracle virtualbox,Hyperv,KVM,OVM
+windows + oracle vm = multiple VM
+
+Login AWS:
+root user login
+IAM user login
+
+where EC2 optin: compute -> EC2
+through browser connect EC2 -> connect opt->
+-------------------------------
+Day-2
+--------------------------------------
+1.AWS Global infra
+2.Shared responcibility
+3.Configuring CLI  to get programatic access or want to work with AWS CLI, create access & secret key use.
+4.using Cloud shell
+5.aws cloud SDK
+5.IAM
+
+DataCenter -> zone AZ -> region ->cloud(connect)&Access
+local zone
+edge location- data stored as a cache so that when search for data CDN content delivery network using cloud front. first search in cache
+if not avail then go to main data center.
+
+every region consist of 2 or more availabilitiy zones
+
+Create EC2 instance or S3 bucket:
+key-pair is the regional resource
+based on region VPC subnets are available
+DNS
+VPC is region secific
+each Az deafault subnet so subnet is zone specific
+
+Shared responcibility: secuurity of the loud
+data center
+physical server
+physical network
+power supply
+customer responcible:
+security in the cloud
+EC2,network security
+os patch update
+authentication & autherization mang
+data encryption
+
+whare is cloud shell: in mang console upper rightside sqare symbol.
+configure aws throgh CLI:
+how do create access key and use it to access machine? in CLI  how we will config git like
+cmd : aws configure
+ask for enter accesskey
+
+cmd: aws configure list
+cmd : cd aws-cli
+cmd: aws s3 help
+cmd: aws s3 mb s3://dipt-bucket-date  new bucket created.
+using python scripty he printed sll s3 bucket name which are in the user.
+
+AWS mgmt console right corner click on usermenu -> securitycredentials->accesskeys->createnewaccesskey->download accesskey
+deactivite existing key then delete key permanently if delet old key
+max we can create 2 keys
+---------------------------------------------
+day3
+-----------------------------------------
+1. IAM: Scope is global
+  MFA
+  Account Policy
+  User group
+  User
+  Policy
+  Role
+  
+  2. Compute Service:
+  
+  MFA enable: AWS console right corner user menu securityaccess
+  download google authenticator,pingid
+  Authenticator
+  Autherization- response to give access to others
+  best practice for root account:
+  enable MFA
+  disable Access key
+  dont use root accnt for regular activities
+  Onlyfor billing info change or creating IAM accnt for first time
+  provide least previlize - if req s3 give only s3 like
+  rotate pwd
+  complex pwd
+  monitor
+  
+ IAM->access management->account settings to see password or account poicy
+ pwd expires 45 days
+  root user
+  IAM user- end user
+  
+User Group: use to assign/revoke previliges from/to user virtual boundary
+workigon:
+DBA
+sys admin
+server less apps
+containers or only developer
+
+create user group: attac policies are user group specific 
+option user group-> create group. next open newly created grp -> goto permission-> attah policy->search S3
+
+attach polciy to group or user (multiple policy we attach)
+create user group first then create user
+Create User: goto user -> adduser then select access type and console pwd then add user group review finally create user.
+then allow to login using IAM login with new created user.only allows to operation on S3 not on ec2 will give error
+
+Usecase2: without create user group direct create user to create adminuser wher he has auterization  for all AWS resource like s3,ec2,db..
+while create user we can attach policy to the user without user group eith option attach existing policy directly.
+
+only read user create , adminuser, limited rescource user...
+custom policy,aws mgmt policy
+ROLE: is provided to a service not to any IAM user specifically EC2.
+whar is arn name? its a resource name amazon
+
 
 
