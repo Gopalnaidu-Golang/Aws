@@ -136,7 +136,61 @@ while create user we can attach policy to the user without user group eith optio
 only read user create , adminuser, limited rescource user...
 custom policy,aws mgmt policy
 ROLE: is provided to a service not to any IAM user specifically EC2.
+how do we create a role?
+goto IAM -> role -> create a role to full acess S3 buket
+whiole create EC2 instance attach this role
+cmd: aws s3 list
+cmd: aws s3 mb s3://newbuket
+cmd: aws ec2 help
+service controle policy: scope of it is organization
 whar is arn name? its a resource name amazon
+--------------------------------------------------------------
+day4
+-----------------------------------
+compute service:
+compute
+storage
+network
+security
+Governance
+
+compute: for different type apps choose the aws resource
+processsor
+network
+OS images
+Disks
+VM
+Lambda 
+Elastic beanstack
+
+selecting compute options: depends on application background
+1.end-to-end control- selecting H/W,Image,network,firewall rules,deploying virtual machine all kind of applications - IaaS-Ec2
+2.Reun web appl- focus on the appl deployment, no focus on infra -PaaS,Elastic beanstalk
+3.Run small apps based on triggers, they are short lived,doesn't run contineuosly,doesn't consume much memory,storage or processsor serverless ,lambda
+4.Microservices based appl- run as a container-docker,ECR-elastic container registry,ECS-container service,EKS or fargate-container service cluster
+5.Batch - for batch processing
+6.step function
+7.Lightshell - no need to deeper technical expertise
+
+create EC2 with AMI extensivly:go to EC2
+AMI
+instance type
+key-pair
+network-vpc -regional resource
+  subnet ot no preference
+  IP-private or public -public will change always whenever login
+  application cluster or loadbalencer -FQDN and IP is registered in DNS
+  ElasticIP is ststic IP and public
+  172.31.81.0/20 CIDR subnet calcletter
+  security group inforamtion nothing but firewall- inbound/outbound rules
+  SSH 22  -linux
+  ICMP to ping
+  3306 portinstall mysql
+  RDP - for windows  
+Storage - block storage EBS[virtual Harddisk]
+advance details: spot instance
+  
+  
 
 
 
